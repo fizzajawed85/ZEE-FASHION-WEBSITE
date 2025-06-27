@@ -1,0 +1,14 @@
+/* Google font  */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap');
+
+/* base styles */
+body {
+  font-family: helvetica, sans-serif; 
+}
+
+/* Brand name specific font */
+.brand-name {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+}

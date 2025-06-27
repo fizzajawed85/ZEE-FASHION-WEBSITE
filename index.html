@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZEE FASHION</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="bg-white text-[#423c39]">
+  <div class="w-full bg-white border-b border-gray-200">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center text-sm">
+      <!-- Search Icon (Clickable) -->
+      <div class="hidden sm:block ml-2">
+        <a href="/search" class="text-[#423c39] text-sm transition hover:text-black">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+      </div>
+      <!-- Free Shipping -->
+      <div class="w-full text-center sm:w-auto">
+        <p class="font-normal text-xs sm:text-sm uppercase text-[#423c39]">
+          Free Shipping Worldwide
+        </p>
+      </div>
+      <!-- Log In -->
+      <div class="hidden sm:flex items-center space-x-2 mr-2">
+        <div class="w-6 h-6 flex items-center justify-center rounded-full bg-gray-100">
+          <i class="fa-solid fa-user text-[#423c39] text-xs"></i>
+        </div>
+        <a href="#" class="text-sm text-[#423c39]">Log In</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="bg-[#423c39] px-6 py-4 flex items-center justify-between text-white sticky top-0 z-50">
+  <!-- Logo + Brand Name -->
+  <div class="flex items-center space-x-2 min-w-0 overflow-hidden">
+    <img src="./images/logo.png" alt="Zee Fashions Logo" class="h-10 w-auto filter invert brightness-0">
+    <span class="brand-name text-white text-base sm:text-lg md:text-xl whitespace-nowrap">
+      ZEE FASHION
+    </span>
+  </div>
+
+  <!-- Desktop Links -->
+  <div class="hidden md:flex items-center space-x-6 text-sm">
+    <a href="#" class="transition duration-200 hover:text-[#e4dcd4] hover:scale-105">Shop</a>
+    <a href="#" class="transition duration-200 hover:text-[#e4dcd4] hover:scale-105">Sale</a>
+    <a href="#" class="transition duration-200 hover:text-[#e4dcd4] hover:scale-105">Customer Care</a>
+    <a href="#" class="transition duration-200 hover:text-[#e4dcd4] hover:scale-105">Stores</a>
+  </div>
+
+  <!-- Right Icons + Hamburger -->
+  <div class="flex items-center space-x-4 text-lg">
+    <a href="#" class="transition duration-200 hover:text-[#e4dcd4] hover:scale-110">
+      <i class="fas fa-heart"></i>
+    </a>
+    <a href="#" class="transition duration-200 hover:text-[#e4dcd4] hover:scale-110">
+      <i class="fas fa-bag-shopping"></i>
+    </a>
+    <!-- Hamburger -->
+    <label for="menu-toggle" class="md:hidden cursor-pointer transition duration-200 hover:text-[#e4dcd4] hover:scale-110">
+      <i class="fas fa-bars"></i>
+    </label>
+  </div>
+</nav>
+
+<!-- Hidden checkbox toggle -->
+<input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+<!-- Mobile Slide Menu -->
+<div class="peer-checked:translate-x-0 fixed top-0 right-0 h-full w-64 bg-white text-black shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6">
+  <!-- Top Section: Search, Login, Close -->
+  <div class="flex justify-between items-center mb-6">
+    <!-- Search Icon (Clickable) -->
+    <a href="/search" class="text-[#423c39] text-base transition duration-200 hover:text-black hover:scale-110">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+    <!-- Log In -->
+    <div class="flex items-center space-x-2">
+      <div class="w-6 h-6 flex items-center justify-center rounded-full bg-gray-100">
+        <i class="fa-solid fa-user text-[#423c39] text-xs"></i>
+      </div>
+      <a href="#" class="text-sm text-[#423c39] hover:text-black transition duration-200 hover:scale-105">Log In</a>
+    </div>
+    <!-- Close Button -->
+    <label for="menu-toggle" class="text-2xl text-gray-600 cursor-pointer transition duration-200 hover:text-[#423c39] hover:scale-110">
+      <i class="fas fa-times"></i>
+    </label>
+  </div>
+
+  <!-- Mobile Links -->
+  <nav class="flex flex-col space-y-4 text-sm">
+    <a href="#" class="transition duration-200 hover:text-[#423c39] hover:scale-105">Shop</a>
+    <a href="#" class="transition duration-200 hover:text-[#423c39] hover:scale-105">Sale</a>
+    <a href="#" class="transition duration-200 hover:text-[#423c39] hover:scale-105">Customer Care</a>
+    <a href="#" class="transition duration-200 hover:text-[#423c39] hover:scale-105">Stores</a>
+  </nav>
+</div>
+
+<!-- Link to External JS -->
+<script src="script.js"></script>
+</body>
+</html>
