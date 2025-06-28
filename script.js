@@ -1,11 +1,22 @@
-const menuToggle = document.getElementById('menuToggle');
-const closeMenu = document.getElementById('closeMenu');
-const mobileMenu = document.getElementById('mobileMenu');
+document.addEventListener('DOMContentLoaded', () => {
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
 
-menuToggle.addEventListener('click', () => {
-  mobileMenu.classList.remove('translate-x-full');
-});
+  const menuToggle = document.getElementById('menuToggle');
+  const closeMenu = document.getElementById('closeMenu');
+  const mobileMenu = document.getElementById('mobileMenu');
 
-closeMenu.addEventListener('click', () => {
-  mobileMenu.classList.add('translate-x-full');
+  if (menuToggle && mobileMenu) {
+    mobileMenu.addEventListener('click', () => {
+      menuToggle.checked = true;
+    });
+  }
+
+  if (menuToggle && closeMenu) {
+    closeMenu.addEventListener('click', () => {
+      menuToggle.checked = false;
+    });
+  }
 });
