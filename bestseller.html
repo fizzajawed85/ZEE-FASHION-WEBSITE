@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
 
   <!-- AOS Animation -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!-- External CSS -->
@@ -22,7 +23,7 @@
 <!-- Fixed topbar and navbar wrapper -->
 <div class="fixed top-0 left-0 w-full z-50">
 
-  <!-- Topbar -->
+<!-- Topbar -->
   <div class="bg-white border-b border-gray-200 text-[#423c39]">
     <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center text-sm">
       <div class="hidden sm:block ml-2">
@@ -91,102 +92,186 @@
     </label>
   </div>
   <nav class="flex flex-col space-y-4 text-sm">
-    <a href="./shop.html" class="transition hover:text-[#423c39] hover:scale-105">Shop</a>
+    <a href="./sale.html" class="transition hover:text-[#423c39] hover:scale-105">Shop</a>
     <a href="./sale.html" class="transition hover:text-[#423c39] hover:scale-105">Sale</a>
     <a href="#" class="transition hover:text-[#423c39] hover:scale-105">Customer Care</a>
     <a href="#" class="transition hover:text-[#423c39] hover:scale-105">Stores</a>
   </nav>
 </div>
 
-<!-- Hero Section -->
-<div class="relative w-full font-helvetica overflow-hidden">
-  <img 
-    src="./images/main.jpeg" 
-    alt="Hero Background" 
-    class="block w-full h-[calc(100vh-108px)] object-cover md:h-auto md:object-contain"
-  />
-  <div class="absolute bottom-3 sm:bottom-4 md:bottom-8 left-2 sm:left-4 md:left-12 z-10 flex flex-col items-start text-left space-y-1 sm:space-y-3 md:space-y-4 px-4">
-    <span class="text-[#423c39] text-[1.9rem] sm:text-4xl md:text-6xl uppercase tracking-wide font-normal">LINE</span>
-    <span class="text-[#423c39] text-[1.9rem] sm:text-4xl md:text-6xl uppercase tracking-wide font-normal">CURATION</span>
-    <a href="./shop.html" class="hero-btn uppercase inline-block text-center min-w-[90px] sm:min-w-[120px] px-4 sm:px-8 py-1.5 sm:py-3 text-xs sm:text-base mb-4">
-  <span>Shop Now</span>
-</a>
+<!-- Product Container -->
+<div class="bg-white text-[#423c39] font-helvetica px-4 md:px-8 mt-10">
 
+    <!-- Mobile Breadcrumb + Toggle (visible on mobile only) -->
+  <div class="flex items-center justify-between pt-6 md:hidden">
+    <nav class="text-sm">
+      <a href="./index.html" class="text-[#423c39] hover:underline">Home</a> &gt;
+      <span class="text-gray-600">All Products</span>
+    </nav>
+    <!-- Mobile Sidebar Toggle Button -->
+    <button class="text-xl" onclick="document.getElementById('mobile-sidebar').classList.toggle('hidden')">
+      <i class="fas fa-sliders-h"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Breadcrumb + Toggle (visible on mobile only) -->
+  <div class="flex items-center justify-between pt-6 md:hidden">
+    <nav class="text-sm">
+      <a href="./index.html" class="text-[#423c39] hover:underline">Home</a> &gt;
+      <span class="text-gray-600">All Products</span>
+    </nav>
+    <!-- Mobile Sidebar Toggle Button -->
+    <button class="text-xl" onclick="document.getElementById('mobile-sidebar').classList.toggle('hidden')">
+      <i class="fas fa-sliders-h"></i>
+    </button>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="flex flex-col md:flex-row gap-8 pt-6" data-aos="fade-up">
+
+    <!-- Sidebar -->
+    <aside id="mobile-sidebar" class="w-full md:w-1/5 space-y-6 text-[#423c39] hidden md:block mb-16">
+      <!-- Breadcrumb for desktop only -->
+      <nav class="text-sm hidden md:block">
+        <a href="./index.html" class="text-[#423c39] hover:underline">Home</a> &gt;
+        <span class="text-gray-600">All Products</span>
+      </nav>
+
+      <h2 class="text-lg font-semibold mt-4">Browse By</h2>
+      <ul class="space-y-2">
+        <li><a href="./shop.html" class="font-semibold hover:underline">All Products</a></li>
+        <li><a href="#" class="hover:underline">Best Sellers</a></li>
+        <li><a href="./sale.html" class="hover:underline">Sale</a></li>
+      </ul>
+
+      <h3 class="text-lg font-semibold mt-6">Filter By</h3>
+      <div class="space-y-4">
+        <!-- Price Filter -->
+        <div>
+          <label class="block mb-1">Price</label>
+          <input type="range" min="11" max="59" class="w-full" />
+          <div class="flex justify-between text-sm">
+            <span>$11</span><span>$59</span>
+          </div>
+        </div>
+
+        <!-- Size Filter -->
+        <div class="filter-box">
+          <div class="filter-header cursor-pointer" onclick="toggleFilter('size')">
+            <span>Size</span>
+            <span id="toggle-icon-size">+</span>
+          </div>
+          <div class="filter-options" id="filter-options-size">
+            <label><input type="checkbox" value="XS"> XS</label><br />
+            <label><input type="checkbox" value="S"> S</label><br />
+            <label><input type="checkbox" value="M"> M</label><br />
+            <label><input type="checkbox" value="L"> L</label><br />
+            <label><input type="checkbox" value="XL"> XL</label><br />
+          </div>
+        </div>
+
+        <!-- Color Filter -->
+        <div class="filter-box ">
+          <div class="filter-header cursor-pointer" onclick="toggleFilter('color')">
+            <span>Color</span>
+            <span id="toggle-icon-color">+</span>
+          </div>
+          <div class="filter-options flex gap-2 mt-2" id="filter-options-color">
+            <div class="w-4 h-4 bg-red-600 rounded-full" title="Red"></div>
+            <div class="w-4 h-4 bg-blue-600 rounded-full" title="Blue"></div>
+            <div class="w-4 h-4 bg-green-600 rounded-full" title="Green"></div>
+            <div class="w-4 h-4 bg-black rounded-full" title="Black"></div>
+            <div class="w-4 h-4 bg-white border rounded-full" title="White"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Product Section -->
+    <main class="w-full md:w-4/5 space-y-8 mt-14">
+      <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+        <h1 class="text-2xl font-bold">BEST SELLER</h1>
+        <!-- Custom Dropdown -->
+<div class="relative w-full sm:w-auto" id="custom-dropdown">
+  <button onclick="toggleDropdown()" class="border p-2 rounded w-full flex justify-between items-center">
+    <span id="selected-option">Sort by: Recommended</span>
+    <i class="fas fa-chevron-down ml-2"></i>
+  </button>
+  
+  <ul id="dropdown-options" class="absolute z-50 mt-1 w-full bg-white border rounded shadow hidden max-h-60 overflow-y-auto">
+    <li onclick="selectOption('Sort by: Recommended')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Recommended</li>
+    <li onclick="selectOption('Newest')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Newest</li>
+    <li onclick="selectOption('Lowest to Highest')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Price (Low to High)</li>
+    <li onclick="selectOption('Price Low')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Price (High to Low)</li>
+    <li onclick="selectOption('A-Z')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Name A-Z</li>
+    <li onclick="selectOption('A to Z')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Name Z-A</li>
+  </ul>
+</div>
+      </div>
+
+      <p class="text-sm">Explore our curated selection of stylish, modern, and elegant pieces crafted to elevate your wardrobe with effortless sophistication.</p>
+
+      <!-- Responsive Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Card 1 -->
+
+<div class="bg-white rounded-lg shadow-md shadow-black/10 overflow-hidden relative">
+  <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-0.5 rounded">BEST SELLER</span>
+  <img src="images/shop/product1.jpg" alt="Urban Street Jacket" class="w-full aspect-square object-cover" />
+  <div class="p-3 space-y-2">
+    <p class="text-sm font-medium">Urban Street Jacket</p>
+    <div class="flex items-center justify-between">
+      <span class="flex items-center space-x-1 text-sm">
+        <i class="fas fa-dollar-sign text-xs"></i><span>32.00</span>
+      </span>
+      <button class="min-w-[40px] px-2 py-1.5 text-xs bg-[#423c39] text-white hover:opacity-90">
+        <i class="fas fa-cart-plus"></i>
+      </button>
+    </div>
   </div>
 </div>
 
-<!-- Cards Section -->
-<section class="max-w-7xl mx-auto px-4 py-12">
-  <div class="text-center mb-12" data-aos="fade-down">
-    <h2 class="text-[#423c39] text-3xl md:text-5xl uppercase font-normal font-helvetica mb-4 pt-6 md:pt-10 leading-tight">
-      The Curated Edits
-    </h2>
-    <p class="text-[#423c39]/80 text-sm sm:text-base max-w-2xl mx-auto text-center pb-4 md:pb-6" data-aos="fade-up" data-aos-delay="100">
-      Crafted for the Modern Aesthetic
-    </p>
-  </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-    <div class="bg-white shadow-lg hover:shadow-2xl transition rounded-xl overflow-hidden relative" data-aos="fade-up" data-aos-delay="100">
-      <span class="absolute top-3 left-3 bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded">Best Seller</span>
-      <img src="./images/product1.jpg" alt="Product 1" class="w-full h-72 object-cover" />
-      <div class="p-5 flex flex-col space-y-3">
-        <div>
-          <h3 class="text-[#423c39] text-xl uppercase font-normal text-center">Modern Classic</h3>
-          <p class="text-sm text-[#423c39]/80 text-center">An elegant touch for your wardrobe</p>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="text-[#423c39] text-base flex items-center space-x-1">
-            <i class="fas fa-dollar-sign"></i><span>12.99</span>
-          </span>
-          <button class="hero-btn px-3 py-2 text-xs">
-            <i class="fas fa-cart-plus"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="bg-white shadow-lg hover:shadow-2xl transition rounded-xl overflow-hidden relative" data-aos="fade-up" data-aos-delay="200">
-      <span class="absolute top-3 left-3 bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded">Best Seller</span>
-      <img src="./images/product2.jpg" alt="Product 2" class="w-full h-72 object-cover" />
-      <div class="p-5 flex flex-col space-y-3">
-        <div>
-          <h3 class="text-[#423c39] text-xl uppercase font-normal text-center">Timeless Edit</h3>
-          <p class="text-sm text-[#423c39]/80 text-center">Refined and sophisticated</p>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="text-[#423c39] text-base flex items-center space-x-1">
-            <i class="fas fa-dollar-sign"></i><span>14.99</span>
-          </span>
-          <button class="hero-btn px-3 py-2 text-xs">
-            <i class="fas fa-cart-plus"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="bg-white shadow-lg hover:shadow-2xl transition rounded-xl overflow-hidden relative" data-aos="fade-up" data-aos-delay="300">
-      <span class="absolute top-3 left-3 bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded">Best Seller</span>
-      <img src="./images/product3.jpg" alt="Product 3" class="w-full h-72 object-cover" />
-      <div class="p-5 flex flex-col space-y-3">
-        <div>
-          <h3 class="text-[#423c39] text-xl uppercase font-normal text-center">Urban Elegance</h3>
-          <p class="text-sm text-[#423c39]/80 text-center">Effortless contemporary style</p>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="text-[#423c39] text-base flex items-center space-x-1">
-            <i class="fas fa-dollar-sign"></i><span>9.99</span>
-          </span>
-          <button class="hero-btn px-3 py-2 text-xs">
-            <i class="fas fa-cart-plus"></i>
-          </button>
-        </div>
-      </div>
+<!-- Card 2 -->
+<div class="bg-white rounded-lg shadow-md shadow-black/10 overflow-hidden relative">
+     <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-0.5 rounded">BEST SELLER</span>
+  <img src="images/shop/product3.jpg" alt="Wool Blend Overcoat" class="w-full aspect-square object-cover" />
+  <div class="p-3 space-y-2">
+    <p class="text-sm font-medium">Wool Blend Overcoat</p>
+    <div class="flex items-center justify-between">
+      <span class="flex items-center space-x-1 text-sm">
+        <i class="fas fa-dollar-sign text-xs"></i><span>69.00</span>
+      </span>
+      <button class="min-w-[40px] px-2 py-1.5 text-xs bg-[#423c39] text-white hover:opacity-90">
+        <i class="fas fa-cart-plus"></i>
+      </button>
     </div>
   </div>
-  <div class="flex justify-center mt-12 w-full" data-aos="fade-up" data-aos-delay="400">
-    <button class="hero-btn uppercase px-6 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-base min-w-[140px] mb-4 mt-3">
-      Shop Best Sellers
-    </button>
+</div>
+
+<!-- Card 7-->
+<div class="bg-white rounded-lg shadow-md shadow-black/10 overflow-hidden relative">
+     <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-0.5 rounded">BEST SELLER</span>
+  <img src="images/shop/product7.jpg" alt="Retro Windbreaker" class="w-full aspect-square object-cover" />
+  <div class="p-3 space-y-2">
+    <p class="text-sm font-medium">Retro Windbreaker</p>
+    <div class="flex items-center justify-between">
+      <span class="flex items-center space-x-1 text-sm">
+        <i class="fas fa-dollar-sign text-xs"></i><span>36.40</span>
+      </span>
+      <button class="min-w-[40px] px-2 py-1.5 text-xs bg-[#423c39] text-white hover:opacity-90">
+        <i class="fas fa-cart-plus"></i>
+      </button>
+    </div>
   </div>
-</section>
+</div>
+
+  <!--Sele Tags-->
+      <div id="best-sellers" class="pt-10"></div>
+      <div id="sale" class="pt-10"></div>
+    </main>
+  </div>
+</div>
 
 <!---Footer-->
 
@@ -204,7 +289,7 @@
       <div>
         <h3 class="uppercase text-sm font-semibold mb-4">Our Store</h3>
         <ul class="space-y-2 text-sm">
-          <li><a href="./shop.html" class="hover:text-white/80">Shop</a></li>
+          <li><a href="#" class="hover:text-white/80">Shop</a></li>
           <li><a href="./sale.html" class="hover:text-white/80">Sale</a></li>
           <li><a href="#" class="hover:text-white/80">Customer Care</a></li>
           <li><a href="#" class="hover:text-white/80">Stores</a></li>
@@ -265,7 +350,6 @@
     © 2035 by ZEE FASHION. All Rights Reserved
   </div>
 </footer>
-
 
 
 <!-- AOS Library -->

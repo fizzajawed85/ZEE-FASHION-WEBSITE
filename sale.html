@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZEE FASHION</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+
+  <!-- AOS Animation -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="overflow-x-hidden">
+
+<!-- Fixed topbar and navbar wrapper -->
+<div class="fixed top-0 left-0 w-full z-50">
+
+<!-- Topbar -->
+  <div class="bg-white border-b border-gray-200 text-[#423c39]">
+    <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center text-sm">
+      <div class="hidden sm:block ml-2">
+        <a href="/search" class="transition hover:text-black hover:scale-105">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+      </div>
+      <div class="w-full text-center sm:w-auto">
+        <p class="text-xs sm:text-sm uppercase">Free Shipping Worldwide</p>
+      </div>
+      <div class="hidden sm:flex items-center space-x-2 mr-2">
+        <div class="w-6 h-6 flex items-center justify-center rounded-full bg-gray-100">
+          <i class="fa-solid fa-user text-xs"></i>
+        </div>
+        <a href="#" class="text-sm hover:text-black hover:scale-105 transition">Log In</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="bg-[#423c39] px-6 py-4 flex items-center justify-between text-white shadow">
+    <div class="flex items-center space-x-2 min-w-0 overflow-hidden">
+      <img src="./images/logo.png" alt="Zee Fashions Logo" class="h-10 w-auto filter invert brightness-0">
+      <span class="brand-name text-white text-base sm:text-lg md:text-xl whitespace-nowrap">ZEE FASHION</span>
+    </div>
+    <div class="hidden md:flex items-center space-x-6 text-sm">
+      <a href="./shop.html" class="transition hover:text-[#e4dcd4] hover:scale-105">Shop</a>
+      <a href="#" class="transition hover:text-[#e4dcd4] hover:scale-105">Sale</a>
+      <a href="#" class="transition hover:text-[#e4dcd4] hover:scale-105">Customer Care</a>
+      <a href="#" class="transition hover:text-[#e4dcd4] hover:scale-105">Stores</a>
+    </div>
+    <div class="flex items-center text-lg space-x-4">
+      <a href="#" class="transition hover:text-[#e4dcd4] hover:scale-110">
+        <i class="fas fa-heart"></i>
+      </a>
+      <a href="#" class="transition hover:text-[#e4dcd4] hover:scale-110">
+        <i class="fas fa-bag-shopping"></i>
+      </a>
+      <label for="menu-toggle" class="md:hidden cursor-pointer transition hover:text-[#e4dcd4] hover:scale-110">
+        <i class="fas fa-bars"></i>
+      </label>
+    </div>
+  </nav>
+</div>
+
+<!-- Spacer below fixed header ONLY on desktop -->
+<div class="hidden md:block pt-[108px]"></div>
+
+<!-- Mobile Menu Toggle -->
+<input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+<!-- Mobile slide-in menu -->
+<div class="peer-checked:translate-x-0 fixed top-0 right-0 h-full w-64 bg-white text-black shadow-lg transform translate-x-full transition-transform duration-300 z-50 p-6">
+  <div class="flex justify-between items-center mb-6">
+    <a href="/search" class="text-[#423c39] transition hover:text-black hover:scale-110">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+    <div class="flex items-center space-x-2">
+      <div class="w-6 h-6 flex items-center justify-center rounded-full bg-gray-100">
+        <i class="fa-solid fa-user text-xs"></i>
+      </div>
+      <a href="#" class="text-sm text-[#423c39] hover:text-black transition hover:scale-105">Log In</a>
+    </div>
+    <label for="menu-toggle" class="text-2xl text-gray-600 cursor-pointer transition hover:text-[#423c39] hover:scale-110">
+      <i class="fas fa-times"></i>
+    </label>
+  </div>
+  <nav class="flex flex-col space-y-4 text-sm">
+    <a href="./shop.html" class="transition hover:text-[#423c39] hover:scale-105">Shop</a>
+    <a href="#" class="transition hover:text-[#423c39] hover:scale-105">Sale</a>
+    <a href="#" class="transition hover:text-[#423c39] hover:scale-105">Customer Care</a>
+    <a href="#" class="transition hover:text-[#423c39] hover:scale-105">Stores</a>
+  </nav>
+</div>
+
+<!-- Product Container -->
+<div class="bg-white text-[#423c39] font-helvetica px-4 md:px-8 mt-10 mb-16">
+
+    <!-- Mobile Breadcrumb + Toggle (visible on mobile only) -->
+  <div class="flex items-center justify-between pt-6 md:hidden">
+    <nav class="text-sm">
+      <a href="./index.html" class="text-[#423c39] hover:underline">Home</a> &gt;
+      <span class="text-gray-600">All Products</span>
+    </nav>
+    <!-- Mobile Sidebar Toggle Button -->
+    <button class="text-xl" onclick="document.getElementById('mobile-sidebar').classList.toggle('hidden')">
+      <i class="fas fa-sliders-h"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Breadcrumb + Toggle (visible on mobile only) -->
+  <div class="flex items-center justify-between pt-6 md:hidden">
+    <nav class="text-sm">
+      <a href="./index.html" class="text-[#423c39] hover:underline">Home</a> &gt;
+      <span class="text-gray-600">All Products</span>
+    </nav>
+    <!-- Mobile Sidebar Toggle Button -->
+    <button class="text-xl" onclick="document.getElementById('mobile-sidebar').classList.toggle('hidden')">
+      <i class="fas fa-sliders-h"></i>
+    </button>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="flex flex-col md:flex-row gap-8 pt-6" data-aos="fade-up">
+
+    <!-- Sidebar -->
+    <aside id="mobile-sidebar" class="w-full md:w-1/5 space-y-6 text-[#423c39] hidden md:block">
+      <!-- Breadcrumb for desktop only -->
+      <nav class="text-sm hidden md:block">
+        <a href="./index.html" class="text-[#423c39] hover:underline">Home</a> &gt;
+        <span class="text-gray-600">All Products</span>
+      </nav>
+
+      <h2 class="text-lg font-semibold mt-4">Browse By</h2>
+      <ul class="space-y-2">
+        <li><a href="#" class="font-semibold hover:underline">All Products</a></li>
+        <li><a href="./bestseller.html" class="hover:underline">Best Sellers</a></li>
+        <li><a href="./sale.html" class="hover:underline">Sale</a></li>
+      </ul>
+
+      <h3 class="text-lg font-semibold mt-6">Filter By</h3>
+      <div class="space-y-4">
+        <!-- Price Filter -->
+        <div>
+          <label class="block mb-1">Price</label>
+          <input type="range" min="11" max="59" class="w-full" />
+          <div class="flex justify-between text-sm">
+            <span>$11</span><span>$59</span>
+          </div>
+        </div>
+
+        <!-- Size Filter -->
+        <div class="filter-box">
+          <div class="filter-header cursor-pointer" onclick="toggleFilter('size')">
+            <span>Size</span>
+            <span id="toggle-icon-size">+</span>
+          </div>
+          <div class="filter-options" id="filter-options-size">
+            <label><input type="checkbox" value="XS"> XS</label><br />
+            <label><input type="checkbox" value="S"> S</label><br />
+            <label><input type="checkbox" value="M"> M</label><br />
+            <label><input type="checkbox" value="L"> L</label><br />
+            <label><input type="checkbox" value="XL"> XL</label><br />
+          </div>
+        </div>
+
+        <!-- Color Filter -->
+        <div class="filter-box">
+          <div class="filter-header cursor-pointer" onclick="toggleFilter('color')">
+            <span>Color</span>
+            <span id="toggle-icon-color">+</span>
+          </div>
+          <div class="filter-options flex gap-2 mt-2" id="filter-options-color">
+            <div class="w-4 h-4 bg-red-600 rounded-full" title="Red"></div>
+            <div class="w-4 h-4 bg-blue-600 rounded-full" title="Blue"></div>
+            <div class="w-4 h-4 bg-green-600 rounded-full" title="Green"></div>
+            <div class="w-4 h-4 bg-black rounded-full" title="Black"></div>
+            <div class="w-4 h-4 bg-white border rounded-full" title="White"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Product Section -->
+    <main class="w-full md:w-4/5 space-y-8">
+      <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-4">
+        <h1 class="text-2xl font-bold">SALE</h1>
+        <!-- Custom Dropdown -->
+<div class="relative w-full sm:w-auto" id="custom-dropdown">
+  <button onclick="toggleDropdown()" class="border p-2 rounded w-full flex justify-between items-center">
+    <span id="selected-option">Sort by: Recommended</span>
+    <i class="fas fa-chevron-down ml-2"></i>
+  </button>
+  
+  <ul id="dropdown-options" class="absolute z-50 mt-1 w-full bg-white border rounded shadow hidden max-h-60 overflow-y-auto">
+    <li onclick="selectOption('Sort by: Recommended')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Recommended</li>
+    <li onclick="selectOption('Newest')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Newest</li>
+    <li onclick="selectOption('Lowest to Highest')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Price (Low to High)</li>
+    <li onclick="selectOption('Price Low')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Price (High to Low)</li>
+    <li onclick="selectOption('A-Z')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Name A-Z</li>
+    <li onclick="selectOption('A to Z')" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Name Z-A</li>
+  </ul>
+</div>
+      </div>
+
+      <p class="text-sm">Explore our curated selection of stylish, modern, and elegant pieces crafted to elevate your wardrobe with effortless sophistication.</p>
+
+      <!-- Responsive Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Card 1 -->
+     
+<div class="bg-white rounded-lg shadow-md shadow-black/10 overflow-hidden relative">
+  <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-0.5 rounded">SALE</span>
+  <img src="images/shop/product1.jpg" alt="Elegant Knit Pullover" class="w-full aspect-square object-cover" />
+  <div class="p-3 space-y-2">
+    <p class="text-sm font-medium">Elegant Knit Pullover</p>
+    <div class="flex items-center justify-between">
+      <span class="flex items-center space-x-1 text-sm">
+        <i class="fas fa-dollar-sign text-xs"></i><span>19.99</span>
+      </span>
+      <button class="min-w-[40px] px-2 py-1.5 text-xs bg-[#423c39] text-white hover:opacity-90">
+        <i class="fas fa-cart-plus"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Card 5 -->
+<div class="bg-white rounded-lg shadow-md shadow-black/10 overflow-hidden relative">
+  <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-0.5 rounded">SALE</span>
+  <img src="images/shop/product5.jpg" alt="Classic Trench Coat" class="w-full aspect-square object-cover" />
+  <div class="p-3 space-y-2">
+    <p class="text-sm font-medium">Classic Trench Coat</p>
+    <div class="flex items-center justify-between">
+      <span class="flex items-center space-x-1 text-sm">
+        <i class="fas fa-dollar-sign text-xs"></i><span>49.00</span>
+      </span>
+      <button class="min-w-[40px] px-2 py-1.5 text-xs bg-[#423c39] text-white hover:opacity-90">
+        <i class="fas fa-cart-plus"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Card 9 -->
+<div class="bg-white rounded-lg shadow-md shadow-black/10 overflow-hidden relative">
+     <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-0.5 rounded">SALE</span>
+  <img src="images/shop/product9.jpg" alt="Fleece Winter Jacket" class="w-full aspect-square object-cover" />
+  <div class="p-3 space-y-2">
+    <p class="text-sm font-medium">Fleece Winter Jacket</p>
+    <div class="flex items-center justify-between">
+      <span class="flex items-center space-x-1 text-sm">
+        <i class="fas fa-dollar-sign text-xs"></i><span>58.00</span>
+      </span>
+      <button class="min-w-[40px] px-2 py-1.5 text-xs bg-[#423c39] text-white hover:opacity-90">
+        <i class="fas fa-cart-plus"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Card 10 -->
+<div class="bg-white rounded-lg shadow-md shadow-black/10 overflow-hidden relative">
+     <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-0.5 rounded">SALE</span>
+  <img src="images/shop/product10.jpg" alt="Denim Patch Jacket" class="w-full aspect-square object-cover" />
+  <div class="p-3 space-y-2">
+    <p class="text-sm font-medium">Denim Patch Jacket</p>
+    <div class="flex items-center justify-between">
+      <span class="flex items-center space-x-1 text-sm">
+        <i class="fas fa-dollar-sign text-xs"></i><span>42.30</span>
+      </span>
+      <button class="min-w-[40px] px-2 py-1.5 text-xs bg-[#423c39] text-white hover:opacity-90">
+        <i class="fas fa-cart-plus"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Card 14 -->
+<div class="bg-white rounded-lg shadow-md shadow-black/10 overflow-hidden relative">
+     <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-0.5 rounded">SALE</span>
+  <img src="images/shop/product14.jpg" alt="Minimalist Utility Jacket" class="w-full aspect-square object-cover" />
+  <div class="p-3 space-y-2">
+    <p class="text-sm font-medium">Minimalist Utility Jacket</p>
+    <div class="flex items-center justify-between">
+      <span class="flex items-center space-x-1 text-sm">
+        <i class="fas fa-dollar-sign text-xs"></i><span>38.25</span>
+      </span>
+      <button class="min-w-[40px] px-2 py-1.5 text-xs bg-[#423c39] text-white hover:opacity-90">
+        <i class="fas fa-cart-plus"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Card 15 -->
+<div class="bg-white rounded-lg shadow-md shadow-black/10 overflow-hidden relative">
+     <span class="absolute top-2 left-2 bg-blue-600 text-white text-xs px-2 py-0.5 rounded">SALE</span>
+  <img src="images/shop/product15.png" alt="Tech Parka Jacket" class="w-full aspect-square object-cover" />
+  <div class="p-3 space-y-2">
+    <p class="text-sm font-medium">Tech Parka Jacket</p>
+    <div class="flex items-center justify-between">
+      <span class="flex items-center space-x-1 text-sm">
+        <i class="fas fa-dollar-sign text-xs"></i><span>79.99</span>
+      </span>
+      <button class="min-w-[40px] px-2 py-1.5 text-xs bg-[#423c39] text-white hover:opacity-90">
+        <i class="fas fa-cart-plus"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+  <!--Sele Tags-->
+      <div id="best-sellers" class="pt-10"></div>
+      <div id="sale" class="pt-10"></div>
+    </main>
+  </div>
+</div>
+
+<!---Footer-->
+
+<footer class="bg-[#423c39] text-white font-helvetica px-4 sm:px-6 md:px-12 lg:px-16 pt-10 ">
+  <!-- Brand Name Row with extra top/bottom space -->
+  <div class="py-6 md:py-8">
+    <h2 class="brand-name text-2xl sm:text-3xl md:text-4xl mb-4">ZEE FASHION</h2>
+  </div>
+
+  <!-- Second Row: Grid -->
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 pb-8">
+    
+    <!-- Column 1: Our Store + Need Assistance -->
+    <div class="flex flex-col space-y-6">
+      <div>
+        <h3 class="uppercase text-sm font-semibold mb-4">Our Store</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="./shop.html" class="hover:text-white/80">Shop</a></li>
+          <li><a href="#" class="hover:text-white/80">Sale</a></li>
+          <li><a href="#" class="hover:text-white/80">Customer Care</a></li>
+          <li><a href="#" class="hover:text-white/80">Stores</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="uppercase text-sm font-semibold mb-2">Need Assistance?</h3>
+        <p class="text-sm">123-456-7890</p>
+        <p class="text-sm">info@mysite.com</p>
+      </div>
+    </div>
+
+    <!-- Column 2: Terms & Conditions + Stay Connected -->
+    <div class="flex flex-col space-y-6">
+      <div>
+        <h3 class="uppercase text-sm font-semibold mb-4">Terms & Conditions</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#" class="hover:text-white/80">Terms & Conditions</a></li>
+          <li><a href="#" class="hover:text-white/80">Privacy Policy</a></li>
+          <li><a href="#" class="hover:text-white/80">Shipping Policy</a></li>
+          <li><a href="#" class="hover:text-white/80">Refund Policy</a></li>
+          <li><a href="#" class="hover:text-white/80">Accessibility Statement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="uppercase text-sm font-semibold mb-2">Stay Connected</h3>
+        <div class="flex space-x-3 text-lg">
+          <a href="#" class="hover:scale-110 transition-transform duration-300"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="hover:scale-110 transition-transform duration-300"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:scale-110 transition-transform duration-300"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" class="hover:scale-110 transition-transform duration-300"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:scale-110 transition-transform duration-300"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Column 3: Be Our Friend -->
+    <div class="flex flex-col space-y-6">
+      <div>
+        <h3 class="uppercase text-sm font-semibold mb-4">Be Our Friend</h3>
+        <label for="email" class="block text-xs mb-2">Enter Your Email Here *</label>
+        <input id="email" type="email" placeholder="Email" class="w-full px-3 py-2 mb-3 bg-white/10 border border-white/20 rounded text-sm placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/30">
+
+        <div class="flex items-start mb-4">
+          <input id="subscribe" type="checkbox" class="mt-1 mr-2 bg-white/20 border-white/30 focus:ring-white">
+          <label for="subscribe" class="text-xs">Yes, subscribe me to your newsletter.</label>
+        </div>
+
+        <button class="hero-btn uppercase w-full py-2 text-sm">
+          <span>Subscribe Now</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Last Row: Copyright -->
+  <div class="text-center text-xs py-5 border-t border-white/20 ">
+    © 2035 by ZEE FASHION. All Rights Reserved
+  </div>
+</footer>
+
+
+<!-- AOS Library -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<!-- External JS -->
+<script src="script.js"></script>
+</body>
+</html>
