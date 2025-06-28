@@ -1,8 +1,11 @@
+// AOS Animination
 document.addEventListener('DOMContentLoaded', () => {
   AOS.init({
     duration: 1000,
     once: true
   });
+
+  // Nav Menu
 
   const menuToggle = document.getElementById('menuToggle');
   const closeMenu = document.getElementById('closeMenu');
@@ -46,10 +49,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById("dropdown-options").classList.add("hidden");
   }
 
-  // Optional: Close dropdown when clicking outside
+  // Close dropdown when clicking outside
   window.addEventListener("click", function (e) {
     const dropdown = document.getElementById("custom-dropdown");
     if (!dropdown.contains(e.target)) {
       document.getElementById("dropdown-options").classList.add("hidden");
     }
   });
+
+   // FAQ Toggle 
+
+   document.addEventListener('DOMContentLoaded', function () {
+      const toggles = document.querySelectorAll('.faq-toggle');
+      toggles.forEach(toggle => {
+        toggle.addEventListener('click', function () {
+          const content = this.nextElementSibling;
+          const icon = this.querySelector('i');
+          content.classList.toggle('hidden');
+          icon.classList.toggle('fa-chevron-down');
+          icon.classList.toggle('fa-chevron-up');
+        });
+      });
+    });

@@ -44,7 +44,7 @@ body {
   background: linear-gradient(90deg, #fff, #aaa);
   animation: slideBg 2s infinite linear;
   z-index: 0;
-  opacity: 0.2; /* Always visible subtle animated overlay */
+  opacity: 0.2; 
 }
 
 .hero-btn span {

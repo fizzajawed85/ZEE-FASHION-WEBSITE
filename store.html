@@ -10,8 +10,12 @@
 
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    
+  <!-- Alpine.js -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
   <!-- AOS Animation -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <!-- External CSS -->
@@ -22,7 +26,7 @@
 <!-- Fixed topbar and navbar wrapper -->
 <div class="fixed top-0 left-0 w-full z-50">
 
-  <!-- Topbar -->
+<!-- Topbar -->
   <div class="bg-white border-b border-gray-200 text-[#423c39]">
     <div class="max-w-7xl mx-auto px-6 py-2 flex justify-between items-center text-sm">
       <div class="hidden sm:block ml-2">
@@ -52,7 +56,7 @@
       <a href="./shop.html" class="transition hover:text-[#e4dcd4] hover:scale-105">Shop</a>
       <a href="./sale.html" class="transition hover:text-[#e4dcd4] hover:scale-105">Sale</a>
       <a href="./customer.html" class="transition hover:text-[#e4dcd4] hover:scale-105">Customer Care</a>
-      <a href="./store.html" class="transition hover:text-[#e4dcd4] hover:scale-105">Stores</a>
+      <a href="#" class="transition hover:text-[#e4dcd4] hover:scale-105">Stores</a>
     </div>
     <div class="flex items-center text-lg space-x-4">
       <a href="#" class="transition hover:text-[#e4dcd4] hover:scale-110">
@@ -91,103 +95,76 @@
     </label>
   </div>
   <nav class="flex flex-col space-y-4 text-sm">
-    <a href="./shop.html" class="transition hover:text-[#423c39] hover:scale-105">Shop</a>
+    <a href="./sale.html" class="transition hover:text-[#423c39] hover:scale-105">Shop</a>
     <a href="./sale.html" class="transition hover:text-[#423c39] hover:scale-105">Sale</a>
     <a href="./customer.html" class="transition hover:text-[#423c39] hover:scale-105">Customer Care</a>
-    <a href="./store.html" class="transition hover:text-[#423c39] hover:scale-105">Stores</a>
+    <a href="#" class="transition hover:text-[#423c39] hover:scale-105">Stores</a>
   </nav>
 </div>
 
-<!-- Hero Section -->
-<div class="relative w-full font-helvetica overflow-hidden">
-  <img 
-    src="./images/main.jpeg" 
-    alt="Hero Background" 
-    class="block w-full h-[calc(100vh-108px)] object-cover md:h-auto md:object-contain"
-  />
-  <div class="absolute bottom-3 sm:bottom-4 md:bottom-8 left-2 sm:left-4 md:left-12 z-10 flex flex-col items-start text-left space-y-1 sm:space-y-3 md:space-y-4 px-4">
-    <span class="text-[#423c39] text-[1.9rem] sm:text-4xl md:text-6xl uppercase tracking-wide font-normal">LINE</span>
-    <span class="text-[#423c39] text-[1.9rem] sm:text-4xl md:text-6xl uppercase tracking-wide font-normal">CURATION</span>
-    <a href="./shop.html" class="hero-btn uppercase inline-block text-center min-w-[90px] sm:min-w-[120px] px-4 sm:px-8 py-1.5 sm:py-3 text-xs sm:text-base mb-4">
-  <span>Shop Now</span>
-</a>
+<!---Stores Section-->
 
-  </div>
-</div>
+<section class="bg-white px-4 sm:px-6 lg:px-16 pt-28 sm:pt-24 md:pt-20 lg:pt-10 py-10 font-helvetica text-[#423c39]">
+  <div class="max-w-7xl mx-auto space-y-10">
 
-<!-- Cards Section -->
-<section class="max-w-7xl mx-auto px-4 py-12">
-  <div class="text-center mb-12" data-aos="fade-down">
-    <h2 class="text-[#423c39] text-3xl md:text-5xl uppercase font-normal font-helvetica mb-4 pt-6 md:pt-10 leading-tight">
-      The Curated Edits
-    </h2>
-    <p class="text-[#423c39]/80 text-sm sm:text-base max-w-2xl mx-auto text-center pb-4 md:pb-6" data-aos="fade-up" data-aos-delay="100">
-      Crafted for the Modern Aesthetic
+    <!-- Store Heading -->
+    <h2 class="text-2xl sm:text-3xl font-semibold uppercase tracking-widest mt-6 sm:mt-10">Store Locator</h2>
+
+    <!-- Store Description -->
+    <p class="text-base sm:text-[16px] leading-relaxed max-w-3xl">
+      Find — <strong>ZEE FASHION</strong> stores at prime locations across Pakistan. Step in to experience our latest collections and personalized assistance.
     </p>
-  </div>
-  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
-    <div class="bg-white shadow-lg hover:shadow-2xl transition rounded-xl overflow-hidden relative" data-aos="fade-up" data-aos-delay="100">
-      <span class="absolute top-3 left-3 bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded">Best Seller</span>
-      <img src="./images/product1.jpg" alt="Product 1" class="w-full h-72 object-cover" />
-      <div class="p-5 flex flex-col space-y-3">
-        <div>
-          <h3 class="text-[#423c39] text-xl uppercase font-normal text-center">Modern Classic</h3>
-          <p class="text-sm text-[#423c39]/80 text-center">An elegant touch for your wardrobe</p>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="text-[#423c39] text-base flex items-center space-x-1">
-            <i class="fas fa-dollar-sign"></i><span>12.99</span>
-          </span>
-          <button class="hero-btn px-3 py-2 text-xs">
-            <i class="fas fa-cart-plus"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="bg-white shadow-lg hover:shadow-2xl transition rounded-xl overflow-hidden relative" data-aos="fade-up" data-aos-delay="200">
-      <span class="absolute top-3 left-3 bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded">Best Seller</span>
-      <img src="./images/product2.jpg" alt="Product 2" class="w-full h-72 object-cover" />
-      <div class="p-5 flex flex-col space-y-3">
-        <div>
-          <h3 class="text-[#423c39] text-xl uppercase font-normal text-center">Timeless Edit</h3>
-          <p class="text-sm text-[#423c39]/80 text-center">Refined and sophisticated</p>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="text-[#423c39] text-base flex items-center space-x-1">
-            <i class="fas fa-dollar-sign"></i><span>14.99</span>
-          </span>
-          <button class="hero-btn px-3 py-2 text-xs">
-            <i class="fas fa-cart-plus"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-    <div class="bg-white shadow-lg hover:shadow-2xl transition rounded-xl overflow-hidden relative" data-aos="fade-up" data-aos-delay="300">
-      <span class="absolute top-3 left-3 bg-blue-900 text-white text-xs font-semibold px-2 py-1 rounded">Best Seller</span>
-      <img src="./images/product3.jpg" alt="Product 3" class="w-full h-72 object-cover" />
-      <div class="p-5 flex flex-col space-y-3">
-        <div>
-          <h3 class="text-[#423c39] text-xl uppercase font-normal text-center">Urban Elegance</h3>
-          <p class="text-sm text-[#423c39]/80 text-center">Effortless contemporary style</p>
-        </div>
-        <div class="flex items-center justify-between">
-          <span class="text-[#423c39] text-base flex items-center space-x-1">
-            <i class="fas fa-dollar-sign"></i><span>9.99</span>
-          </span>
-          <button class="hero-btn px-3 py-2 text-xs">
-            <i class="fas fa-cart-plus"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="flex justify-center mt-12 w-full" data-aos="fade-up" data-aos-delay="400">
-   <a href="./bestseller.html" class="hero-btn uppercase inline-block text-center px-6 sm:px-8 py-2.5 sm:py-3 text-xs sm:text-base min-w-[140px] mb-4 mt-3">
-  Shop Best Sellers
-</a>
 
+    <!-- Divider -->
+    <hr class="my-10 border-t border-gray-300">
+
+    <!-- Address Columns -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Column 1 -->
+      <div class="space-y-1">
+        <p class="font-semibold">THE ZEES</p>
+        <p>Plot No. 123, Sector 21</p>
+        <p>Main Market Road</p>
+        <p>Islamabad - 44000</p>
+        <p>Pakistan</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="space-y-1">
+        <p class="font-semibold">ZEES</p>
+        <p>Shop No. 45, Ground Floor</p>
+        <p>ABC Plaza, MG Road</p>
+        <p>Lahore - 54000</p>
+        <p>Pakistan</p>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="space-y-1">
+        <p class="font-semibold">FASHION CENTER</p>
+        <p>Unit 8, Packages Mall</p>
+        <p>Walton Road</p>
+        <p>Karachi - 74200</p>
+        <p>Pakistan</p>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <hr class="my-10 border-t border-gray-300">
+
+    <!-- Embedded Map -->
+
+<div class="w-full mt-10 border border-blue-400 rounded overflow-hidden">
+  <iframe
+    class="w-full h-[300px] sm:h-[400px]"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28914.68390666783!2d66.9749727!3d24.8607342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33eeb42cf9ae9%3A0x8c86a0b0f2e9cba9!2sClifton%20Beach!5e0!3m2!1sen!2s!4v1719725188234!5m2!1sen!2s"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>
   </div>
 </section>
+
 
 <!---Footer-->
 
@@ -208,7 +185,7 @@
           <li><a href="./shop.html" class="hover:text-white/80">Shop</a></li>
           <li><a href="./sale.html" class="hover:text-white/80">Sale</a></li>
           <li><a href="./customer.html" class="hover:text-white/80">Customer Care</a></li>
-          <li><a href="./store.html" class="hover:text-white/80">Stores</a></li>
+          <li><a href="#" class="hover:text-white/80">Stores</a></li>
         </ul>
       </div>
       <div>
@@ -268,9 +245,9 @@
 </footer>
 
 
-
 <!-- AOS Library -->
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 
 <!-- External JS -->
 <script src="script.js"></script>
